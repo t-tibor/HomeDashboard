@@ -1,0 +1,53 @@
+﻿@page
+@model Web.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Konyha";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="card m-2" style="width: 18rem;">
+                <div class="card-body text-center">
+                    <form method="post">  
+                       <input type="hidden" name="mode" value="off" />
+                       <button type="submit" class="border-0 bg-transparent" style="width: 100%;">
+                           <img 
+                           src="~/images/light_off.png" 
+                           class="img" 
+                           alt="Light off" 
+                           style="width: 100%; height: auto;" />
+                       </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 d-flex justify-content-end">
+            <div class="card m-2" style="width: 18rem;">
+                <div class="card-body text-center">
+                    <form method="post">
+                        <input type="hidden" name="mode" value="mild" />
+                        <button type="submit" class="bg-transparent border-0" style="width: 100%;">
+                            <img src="~/images/light_mild.png" class="img" alt="Light on" style="width: 100%; height: auto;" />
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 d-flex justify-content-start">
+            <div class="card m-2" style="width: 18rem;">
+                <div class="card-body text-center">
+                    <form method="post">
+                        <input type="hidden" name="mode" value="on" />
+                        <button type="submit" class="bg-transparent border-0" style="width: 100%;">
+                            <img src="~/images/light_on.png" class="img" alt="Light on" style="width: 100%; height: auto;" />
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
