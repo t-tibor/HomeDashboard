@@ -1,11 +1,16 @@
 using HomeDashboard.Web.MQTT;
+using HomeDashboard.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add optional config file for containerized deployments
+builder.Configuration.AddJsonFile("/config.json", optional: true, reloadOnChange: true);
 
 builder.AddMqttInfrastructure();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<ILightControlService, LightControlService>();
 
 var app = builder.Build();
 

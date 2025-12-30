@@ -58,4 +58,13 @@ public class MqttConfig
     public string ServerHostName { get; set; } = string.Empty;
 
     public int? Port { get; set; } = 1883;
+
+    public MqttTopics Topics { get; set; } = new();
+}
+
+public class MqttTopics
+{
+    public string Dimmer { get; set; } = "zigbee2mqtt/LedController";
+    public string DimmerSet { get; set; } = "zigbee2mqtt/LedController/set";
+    public string PowerSupplySet { get; set; } = "zigbee2mqtt/KitchenLedLightSwitch/set";
 }
