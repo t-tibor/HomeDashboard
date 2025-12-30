@@ -8,7 +8,7 @@ This repository contains a HomeDashboard ASP.NET Core web application with Docke
 
 #### Standard Build (x86_64)
 ```bash
-docker build -t homedashboard-web .
+docker build -t ttuti94/homedashboard-web .
 ```
 Builds the Docker image for x86_64 architecture using the default Docker builder.
 
@@ -18,7 +18,7 @@ Builds the Docker image for x86_64 architecture using the default Docker builder
 docker buildx create --use
 
 # Build ARM64 image
-docker buildx build --platform linux/arm64 -t homedashboard-web:arm64 --load .
+docker buildx build --platform linux/arm64 -t ttuti94/homedashboard-web:arm64 --load .
 ```
 Builds the Docker image specifically for ARM64 architecture, optimized for Raspberry Pi 5 and other ARM64 devices.
 
@@ -31,7 +31,7 @@ docker run -p 8080:8080 homedashboard-web
 
 #### Run with mounted config file
 ```bash
-docker run -p 8080:8080 -v /path/to/config.json:/config.json homedashboard-web
+docker run -p 8080:8080 -v /path/to/config.json:/config.json ttuti94/homedashboard-web
 ```
 
 Mounts a local configuration file to override default settings.
